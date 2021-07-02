@@ -1,3 +1,3 @@
-# my-app-01
+to practise react-native is the purpose of this app in 2021
 
 
