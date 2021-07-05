@@ -15,14 +15,14 @@ const onChange =()=>{
 return (
     <>
     <View style={styles.container}>
-      <Text style={styles.textColor}>Sepio is coding in react native </Text>
+      <Text style={styles.textColor}> react native </Text>
       <View><Button  onPress={onChange}  title="change state"/></View>
       <View>{names.map((name,id) =>(<View key={id}><Text>{name.name}</Text></View>))}</View>
     </View>
     <View style={styles.container2}><Text>my name is  {name}</Text></View>
     <View style={styles.input}>
       <Text >Enter data</Text>
-      <TextInput style={styles.textIn} 
+      <TextInput style={styles.textInput} 
         placeholder="enter data here :)"
         onChangeText={(val)=> setName(val)}
        />
@@ -48,10 +48,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 0.5,
   },
-  textIn:{
-    borderColor:"black",
+  textInput:{
+    borderColor:'red',
     alignItems: 'center',
     justifyContent: 'center',
+    margin:2,
+    borderWidth:1,
+   
+    padding:6,
+
   },
   input: {
     flex: 0.5,
