@@ -1,6 +1,6 @@
 
 import React, {useState}from 'react';
-import { StyleSheet, Text, View, Button , FlatList} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity , FlatList} from 'react-native';
 
 export default function App() {
   const [names, setNames ]= useState([{name:"white", id:1}, 
@@ -16,13 +16,22 @@ export default function App() {
 const onChange =()=>{
   setName("sepio")
 }
+const delItem =(id)=>{
+
+  console.log(id)
+  setNames((prevNames)=>{
+    return prevNames.filter(name => name.id !== id ) 
+  })
+
+}
 return (
     <View  style={styles.container}>
       <Text>Hello Coder</Text>
       <FlatList
-      data={names}
-      renderItem={({item})=>(<View style={styles.container2}><Button   title={item.name}/></View>)}
-      keyExtractor={(item)=> item.id}
+        data={names}
+        renderItem={({item})=>
+        (<TouchableOpacity onPress={()=>delItem(item.id)} style={styles.container2}><Text>{item.name}</Text></TouchableOpacity>)}
+        keyExtractor={(item)=> item.id}
       />
     </View>
    
@@ -47,7 +56,7 @@ container2:{
   padding:10,
   borderRadius:10,
   backgroundColor:'lightblue',
-  width:120
+  alignItems:'center'
  
 }
 
