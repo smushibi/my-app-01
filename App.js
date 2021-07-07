@@ -31,7 +31,7 @@ return (
         data={names}
         renderItem={({item})=>
         (<TouchableOpacity onPress={()=>delItem(item.id)} style={styles.container2}><Text>{item.name}</Text></TouchableOpacity>)}
-        keyExtractor={(item)=> item.id}
+        keyExtractor={item => item.id.toString()}
       />
     </View>
    
@@ -41,9 +41,9 @@ return (
 const styles = StyleSheet.create({
 
 container:{
-  backgroundColor:"yellow",
-  alignItems:"center"
- 
+  backgroundColor:"lightgray",
+  alignItems:"center",
+  flex: 1,
 
 },
 text:{
@@ -57,6 +57,7 @@ container2:{
   borderRadius:10,
   backgroundColor:'lightblue',
   alignItems:'center'
+
  
 }
 
